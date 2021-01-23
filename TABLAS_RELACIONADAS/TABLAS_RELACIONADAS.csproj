@@ -46,6 +46,12 @@
   <ItemGroup>
     <Compile Include="CAPADATOS\ClsProductos.cs" />
     <Compile Include="CAPADATOS\ConexionBD.cs" />
+    <Compile Include="CAPAPRESENTACION\MantenimientoProd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CAPAPRESENTACION\MantenimientoProd.Designer.cs">
+      <DependentUpon>MantenimientoProd.cs</DependentUpon>
+    </Compile>
     <Compile Include="CAPAPRESENTACION\PRODUCTOS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CAPAPRESENTACION\MantenimientoProd.resx">
+      <DependentUpon>MantenimientoProd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CAPAPRESENTACION\PRODUCTOS.resx">
       <DependentUpon>PRODUCTOS.cs</DependentUpon>
     </EmbeddedResource>

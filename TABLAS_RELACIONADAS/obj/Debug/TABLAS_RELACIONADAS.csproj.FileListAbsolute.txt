@@ -30,3 +30,14 @@ C:\Users\DantesMx\Desktop\github\c-sharp\1.Proyectos\TABLAS_RELACIONADAS\TABLAS_
 C:\Users\DantesMx\Desktop\github\c-sharp\1.Proyectos\TABLAS_RELACIONADAS\TABLAS_RELACIONADAS\obj\Debug\TABLAS_RELACIONADAS.csproj.CoreCompileInputs.cache
 C:\Users\DantesMx\Desktop\github\c-sharp\1.Proyectos\TABLAS_RELACIONADAS\TABLAS_RELACIONADAS\obj\Debug\TABLAS_RELACIONADAS.exe
 C:\Users\DantesMx\Desktop\github\c-sharp\1.Proyectos\TABLAS_RELACIONADAS\TABLAS_RELACIONADAS\obj\Debug\TABLAS_RELACIONADAS.pdb
+C:\Users\DantesMx\Desktop\Proyects\IM - github\C#.NET\TABLAS_RELACIONADAS\TABLAS_RELACIONADAS\bin\Debug\TABLAS_RELACIONADAS.exe.config
+C:\Users\DantesMx\Desktop\Proyects\IM - github\C#.NET\TABLAS_RELACIONADAS\TABLAS_RELACIONADAS\bin\Debug\TABLAS_RELACIONADAS.exe
+C:\Users\DantesMx\Desktop\Proyects\IM - github\C#.NET\TABLAS_RELACIONADAS\TABLAS_RELACIONADAS\bin\Debug\TABLAS_RELACIONADAS.pdb
+C:\Users\DantesMx\Desktop\Proyects\IM - github\C#.NET\TABLAS_RELACIONADAS\TABLAS_RELACIONADAS\obj\Debug\TABLAS_RELACIONADAS.csprojAssemblyReference.cache
+C:\Users\DantesMx\Desktop\Proyects\IM - github\C#.NET\TABLAS_RELACIONADAS\TABLAS_RELACIONADAS\obj\Debug\TABLAS_RELACIONADAS.CAPAPRESENTACION.PRODUCTOS.resources
+C:\Users\DantesMx\Desktop\Proyects\IM - github\C#.NET\TABLAS_RELACIONADAS\TABLAS_RELACIONADAS\obj\Debug\TABLAS_RELACIONADAS.Properties.Resources.resources
+C:\Users\DantesMx\Desktop\Proyects\IM - github\C#.NET\TABLAS_RELACIONADAS\TABLAS_RELACIONADAS\obj\Debug\TABLAS_RELACIONADAS.csproj.GenerateResource.cache
+C:\Users\DantesMx\Desktop\Proyects\IM - github\C#.NET\TABLAS_RELACIONADAS\TABLAS_RELACIONADAS\obj\Debug\TABLAS_RELACIONADAS.csproj.CoreCompileInputs.cache
+C:\Users\DantesMx\Desktop\Proyects\IM - github\C#.NET\TABLAS_RELACIONADAS\TABLAS_RELACIONADAS\obj\Debug\TABLAS_RELACIONADAS.exe
+C:\Users\DantesMx\Desktop\Proyects\IM - github\C#.NET\TABLAS_RELACIONADAS\TABLAS_RELACIONADAS\obj\Debug\TABLAS_RELACIONADAS.pdb
+C:\Users\DantesMx\Desktop\Proyects\IM - github\C#.NET\TABLAS_RELACIONADAS\TABLAS_RELACIONADAS\obj\Debug\TABLAS_RELACIONADAS.CAPAPRESENTACION.MantenimientoProd.resources
