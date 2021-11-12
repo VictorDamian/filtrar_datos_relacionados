@@ -132,7 +132,6 @@ namespace TABLAS_RELACIONADAS.CAPAPRESENTACION
             this.Controls.Add(this.CmbCategoria);
             this.Name = "MantenimientoProd";
             this.Text = "MantenimientoProd";
-            this.Load += new System.EventHandler(this.MantenimientoProd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

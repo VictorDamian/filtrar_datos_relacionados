@@ -5,21 +5,21 @@ namespace TABLAS_RELACIONADAS.CAPADATOS
 {
     class ConexionBD
     {
-        static private string CadenaConexion = "Server=DANTES\\DANTES;DataBase=PRACTICA_TABLAS;Integrated Security=true";
-        private SqlConnection Conexion= new SqlConnection(CadenaConexion);
+        static private string _connectionString = "Server=DANTES;DataBase=TABLASRELACIONADAS;Integrated Security=true";
+        private SqlConnection _conn = new SqlConnection(_connectionString);
 
-        public SqlConnection AbrirConexion()
+        public SqlConnection OpenConnection()
         {
-            if (Conexion.State == ConnectionState.Closed)
-                Conexion.Open();
-            return Conexion;
+            if (_conn.State == ConnectionState.Closed)
+                _conn.Open();
+            return _conn;
         }
 
-        public SqlConnection CerrarConexion()
+        public SqlConnection CloseConnection()
         {
-            if (Conexion.State == ConnectionState.Open)
-                Conexion.Close();
-            return Conexion;
+            if (_conn.State == ConnectionState.Open)
+                _conn.Close();
+            return _conn;
         }
     }
 }

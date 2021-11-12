@@ -5,85 +5,86 @@ namespace TABLAS_RELACIONADAS.CAPADATOS
 {
     class ClsProductos
     {
-        private ConexionBD Conexion = new ConexionBD();
-        private SqlCommand Comando = new SqlCommand();
-        private SqlDataReader LeerFilas;
-        //ATRIBUTOS
-        private int idprod;
-        private int idCategoria;
-        private int idMarca;
-        private string descripcion;
-        private double precio;
-        //METODOS GET Y SET
-        public int Idprod { get => idprod; set => idprod = value; }
-        public int IdCategoria { get => idCategoria; set => idCategoria = value; }
-        public int IdMarca { get => idMarca; set => idMarca = value; }
-        public string Descripcion { get => descripcion; set => descripcion = value; }
-        public double Precio { get => precio; set => precio = value; }
+        private ConexionBD _conn = new ConexionBD();
+        private SqlCommand _command = new SqlCommand();
+        private SqlDataReader _reader;
+        //ATTRIBUTES
+        private int _idProduct;
+        private int _idCategory;
+        private int _idMark;
+        private string _description;
+        private double _cost;
 
-        public DataTable ListarCategorias()
+        //GET AND SET
+        public int IdProduct { get => _idProduct; set => _idProduct = value; }
+        public int IdCategory { get => _idCategory; set => _idCategory = value; }
+        public int IdMark { get => _idMark; set => _idMark = value; }
+        public string Description { get => _description; set => _description = value; }
+        public double Cost { get => _cost; set => _cost = value; }
+
+        public DataTable CategoryList()
         {
-            DataTable Tabla = new DataTable();
-            Comando.Connection = Conexion.AbrirConexion();
-            Comando.CommandText = "ListarCategorias";
-            Comando.CommandType = CommandType.StoredProcedure;
-            LeerFilas = Comando.ExecuteReader();
-            Tabla.Load(LeerFilas);
-            LeerFilas.Close();
-            Conexion.CerrarConexion();
-            return Tabla;
+            DataTable table = new DataTable();
+            _command.Connection = _conn.OpenConnection();
+            _command.CommandText = "LISTACATEGORIAS";
+            _command.CommandType = CommandType.StoredProcedure;
+            _reader = _command.ExecuteReader();
+            table.Load(_reader);
+            _reader.Close();
+            _conn.CloseConnection();
+            return table;
         }
-        public DataTable ListarMarcas()
+        public DataTable MarkList()
         {
-            DataTable Tabla = new DataTable();
-            Comando.Connection = Conexion.AbrirConexion();
-            Comando.CommandText = "ListarMarcas";
-            Comando.CommandType = CommandType.StoredProcedure;
-            LeerFilas = Comando.ExecuteReader();
-            Tabla.Load(LeerFilas);
-            LeerFilas.Close();
-            Conexion.CerrarConexion();
-            return Tabla;
+            DataTable table = new DataTable();
+            _command.Connection = _conn.OpenConnection();
+            _command.CommandText = "LISTAMARCAS";
+            _command.CommandType = CommandType.StoredProcedure;
+            _reader = _command.ExecuteReader();
+            table.Load(_reader);
+            _reader.Close();
+            _conn.CloseConnection();
+            return table;
         }
-        public void InsertarProductos()
+        public void AddProduct()
         {
-            Comando.Connection = Conexion.AbrirConexion();
-            Comando.CommandText = "AgregarProducto";
-            Comando.CommandType = CommandType.StoredProcedure;
-            Comando.Parameters.AddWithValue("@idcategoria", idCategoria);
-            Comando.Parameters.AddWithValue("@idmarca", idMarca);
-            Comando.Parameters.AddWithValue("@descrip", descripcion);
-            Comando.Parameters.AddWithValue("@prec", precio);
-            Comando.ExecuteNonQuery();
-            Comando.Parameters.Clear();
+            _command.Connection = _conn.OpenConnection();
+            _command.CommandText = "AGREGARPRODUC";
+            _command.CommandType = CommandType.StoredProcedure;
+            _command.Parameters.AddWithValue("@IDCATE", _idCategory);
+            _command.Parameters.AddWithValue("@IDMAR", _idMark);
+            _command.Parameters.AddWithValue("@DESC", _description);
+            _command.Parameters.AddWithValue("@PRECIO", _cost);
+            _command.ExecuteNonQuery();
+            _command.Parameters.Clear();
         }
-        public void EditarProducto()
+        public void EditProduct()
         {
-            Comando.Connection = Conexion.AbrirConexion();
-            Comando.CommandText = "update PRODUCTOS set IDCATEGORIA=" + idCategoria + ",IDMARCA=" + idMarca + ",DESCRIPCION='" + descripcion + "',PRECIO=" + precio + " WHERE IDPROD=" + idprod;
-            Comando.CommandType = CommandType.Text;
-            Comando.ExecuteNonQuery();
-            Conexion.CerrarConexion();
+            _command.Connection = _conn.OpenConnection();
+            _command.CommandText = "UPDATE PRODUCTOS SET IDCATE=" + _idCategory + ",IDMAR=" + _idMark + ",DESCRIPCION='" + _description + "',PRECIO=" + _cost + " WHERE IDPROD=" + _idProduct;
+            _command.CommandType = CommandType.Text;
+            _command.ExecuteNonQuery();
+            _conn.CloseConnection();
         }
-        public void EliminarProd()
+        public void RemoveProduct()
         {
-            Comando.Connection = Conexion.AbrirConexion();
-            Comando.CommandText = "delete PRODUCTOS where IDPROD=" + idprod;
-            Comando.CommandType = CommandType.Text;
-            Comando.ExecuteNonQuery();
-            Conexion.CerrarConexion();
+            _command.Connection = _conn.OpenConnection();
+            _command.CommandText = "DELETE PRODUCTOS WHERE IDPROD=" + _idProduct;
+            _command.CommandType = CommandType.Text;
+            _command.ExecuteNonQuery();
+            _conn.CloseConnection();
         }
-        public DataTable ListarProductos()
+        public DataTable ProductList()
         {
-            DataTable Tabla = new DataTable();
-            Comando.Connection = Conexion.AbrirConexion();
-            Comando.CommandText = "ListarProductos";
-            Comando.CommandType = CommandType.StoredProcedure;
-            LeerFilas = Comando.ExecuteReader();
-            Tabla.Load(LeerFilas);
-            LeerFilas.Close();
-            Conexion.CerrarConexion();
-            return Tabla;
+            DataTable table = new DataTable();
+            _command.Connection = _conn.OpenConnection();
+            _command.CommandText = "LISTAPRODUC";
+            _command.CommandType = CommandType.StoredProcedure;
+            _reader = _command.ExecuteReader();
+            table.Load(_reader);
+            _reader.Close();
+            _conn.CloseConnection();
+            return table;
         }
     }
 }

@@ -6,53 +6,48 @@ namespace TABLAS_RELACIONADAS.CAPAPRESENTACION
 {
     public partial class MantenimientoProd : Form
     {
+        ClsProductos objProdct = new ClsProductos();
+        public string state = "Insert";
+        public string idProduct;
         public MantenimientoProd()
         {
             InitializeComponent();
         }
-        ClsProductos objproducto = new ClsProductos();
-        public string Operacion = "Insertar";
-        public string idprod;
-        public void ListarCategorias()
+        public void CategoryList()
         {
             ClsProductos objProd = new ClsProductos();
-            CmbCategoria.DataSource = objProd.ListarCategorias();
+            CmbCategoria.DataSource = objProd.CategoryList();
             CmbCategoria.DisplayMember = "CATEGORIA";
-            CmbCategoria.ValueMember = "IDCATEG";
+            CmbCategoria.ValueMember = "IDCATE";
         }
-        public void ListarMarcas()
+        public void MarkList()
         {
             ClsProductos objProd = new ClsProductos();
-            CmbMarca.DataSource = objProd.ListarMarcas();
+            CmbMarca.DataSource = objProd.MarkList();
             CmbMarca.DisplayMember = "MARCA";
-            CmbMarca.ValueMember = "IDMARCA";
+            CmbMarca.ValueMember = "IDMAR";
         }
-        private void MantenimientoProd_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (Operacion == "Insertar")
+            if (state == "Insert")
             {
-                objproducto.IdCategoria = Convert.ToInt32(CmbCategoria.SelectedValue);
-                objproducto.IdMarca = Convert.ToInt32(CmbMarca.SelectedValue);
-                objproducto.Descripcion = txtDescripcion.Text;
-                objproducto.Precio = Convert.ToDouble(txtPrecio.Text);
-                objproducto.InsertarProductos();
-                MessageBox.Show("Se inserto correctamente");
+                objProdct.IdCategory = Convert.ToInt32(CmbCategoria.SelectedValue);
+                objProdct.IdMark = Convert.ToInt32(CmbMarca.SelectedValue);
+                objProdct.Description = txtDescripcion.Text;
+                objProdct.Cost = Convert.ToDouble(txtPrecio.Text);
+                objProdct.AddProduct();
+                MessageBox.Show("Inserted correctly");
                 this.Close();
             }
-            else if (Operacion == "Editar")
+            else if (state == "Edit")
             {
-                objproducto.IdCategoria = Convert.ToInt32(CmbCategoria.SelectedValue);
-                objproducto.IdMarca = Convert.ToInt32(CmbMarca.SelectedValue);
-                objproducto.Descripcion = txtDescripcion.Text;
-                objproducto.Precio = Convert.ToDouble(txtPrecio.Text);
-                objproducto.Idprod = Convert.ToInt32(idprod);
-                objproducto.EditarProducto();
-                MessageBox.Show("Se edito correctamente");
+                objProdct.IdProduct = Convert.ToInt32(idProduct);
+                objProdct.IdCategory = Convert.ToInt32(CmbCategoria.SelectedValue);
+                objProdct.IdMark = Convert.ToInt32(CmbMarca.SelectedValue);
+                objProdct.Description = txtDescripcion.Text;
+                objProdct.Cost = Convert.ToDouble(txtPrecio.Text);
+                objProdct.EditProduct();
+                MessageBox.Show("Edited correctly");
                 this.Close();
             }
         }
